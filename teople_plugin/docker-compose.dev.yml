@@ -1,0 +1,27 @@
+---
+---
+version: '3.8'
+
+services:
+  teople-plugin:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    environment:
+      - PLUGIN_NAME=teople_plugin
+    volumes:
+      - ./:/baserow/data/plugins/teople_plugin
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_PASSWORD: baserow
+      POSTGRES_USER: baserow
+      POSTGRES_DB: baserow
+
+  redis:
+    image: redis:6
+# ← Make sure this blank line exists at end (press Enter after last line)

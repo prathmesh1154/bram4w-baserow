@@ -1,0 +1,68 @@
+{
+    debug
+}
+
+:80 {
+	respond /caddy-health-check 200
+
+	handle_path /media/* {
+		@downloads {
+			query dl=*
+		}
+		header @downloads Content-disposition "attachment; filename={query.dl}"
+
+		file_server {
+			root {$MEDIA_ROOT:/baserow/media/}
+		}
+	}
+}
+:80 {
+    # If the public URL is https, redirect to https
+    @https host ${BASEROW_CADDY_ADDRESSES}
+    @https {
+      protocol http
+    }
+    # This ensures that even if you access via http, it redirects to https
+    # if BASEROW_CADDY_ADDRESSES includes an https address
+    # This also helps with the dev setup so http://localhost correctly redirects to the frontend
+    # if you use https://localhost in BASEROW_CADDY_ADDRESSES
+    handle @https {
+        # Redirect to the configured public Baserow URL with https
+        # This is particularly useful if Baserow is configured with https://localhost
+        # and you try to access it via http://localhost.
+        # It handles the public Baserow URL for both http and https access.
+        redir ${BASEROW_PUBLIC_URL_HTTPS} permanent
+    }
+
+    # API and WebSocket traffic to the backend
+    reverse_proxy /api/* backend:8000
+    reverse_proxy /ws/* backend:8000
+
+    # Serve media files directly from the Baserow data volume
+    # Ensure this path matches the volume mount for Baserow's data
+    handle /media/* {
+        root * /baserow/data
+        file_server
+        # Special handling for download links that require a Content-Disposition header
+        # Caddy doesn't have a direct equivalent to Django's file serving with dl parameter,
+        # so this might need to be adjusted or handled by the backend if direct file serving
+        # needs complex logic based on query parameters.
+        # For simplicity, if Baserow is serving directly, it handles this.
+        # If Caddy needs to, a Caddyfile extension might be required.
+    }
+
+    # All other traffic to the frontend
+    reverse_proxy web-frontend:3000
+}
+
+:443 {
+    # If you enable HTTPS for development (e.g., https://localhost)
+    tls internal
+    reverse_proxy /api/* backend:8000
+    reverse_proxy /ws/* backend:8000
+    handle /media/* {
+        root * /baserow/data
+        file_server
+    }
+    reverse_proxy web-frontend:3000
+}

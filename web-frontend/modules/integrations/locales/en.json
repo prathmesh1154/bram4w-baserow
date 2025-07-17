@@ -1,0 +1,134 @@
+{
+  "integrationsCommon": {
+    "singleRow": "single row",
+    "multipleRows": "multiple rows"
+  },
+  "integrationType": {
+    "localBaserow": "Local Baserow"
+  },
+  "localBaserowIntegrationType": {
+    "localBaserowSummary": "Local Baserow - {name}, {username}",
+    "localBaserowNoUser": "Local Baserow - Not configured",
+    "localBaserowWarning": "Authorizing your account gives everyone who has edit permissions to the application full access to the data you have access to. It’s possible to create a second user, give the right permissions and use that one."
+  },
+  "serviceType": {
+    "localBaserowGetRow": "Get single row",
+    "localBaserowListRows": "List multiple rows",
+    "localBaserowAggregateRows": "Summarize field",
+    "localBaserowCreateRow": "Create a Row",
+    "localBaserowCreateRowDescription": "Creates a new row in a Baserow table.",
+    "localBaserowUpdateRow": "Update a Row",
+    "localBaserowUpdateRowDescription": "Updates an existing row in a Baserow table.",
+    "localBaserowDeleteRow": "Delete a row",
+    "localBaserowDeleteRowDescription": "Deletes a row in a Baserow table.",
+    "localBaserowRowsCreated": "Rows created",
+    "localBaserowRowsCreatedDescription": "Triggered when rows are created in a Baserow table.",
+    "localBaserowRowsUpdated": "Rows updated",
+    "localBaserowRowsUpdatedDescription": "Triggered when rows are updated in a Baserow table.",
+    "localBaserowRowsDeleted": "Rows deleted",
+    "localBaserowRowsDeletedDescription": "Triggered when rows are deleted in a Baserow table.",
+    "coreHTTPRequest": "Send HTTP request",
+    "coreHTTPRequestDescription": "Sends an HTTP request to a specified endpoint.",
+    "misconfigured": "Misconfigured",
+    "trashedField": "Trashed field",
+    "errorUrlMissing": "Missing Url property",
+    "errorNoTableSelected": "No table selected",
+    "errorFilterInError": "At least one filter is misconfigured",
+    "errorSortingInError": "At least one sort is misconfigured",
+    "errorNoFieldSelected": "No field selected",
+    "errorNoAggregationTypeSelected": "No aggregation type selected"
+  },
+  "userSourceType": {
+    "localBaserow": "Baserow table authentication"
+  },
+  "localBaserowForm": {
+    "user": "User",
+    "userMessage": "By creating this connection, you’re authorizing the application to use your account to make changes in your local Baserow workspace."
+  },
+  "localBaserowGetRowForm": {
+    "rowFieldLabel": "Row ID",
+    "invalidFormula": "The formula is invalid",
+    "rowFieldPlaceHolder": "Select a row ID",
+    "rowFieldHelpText": "Leave this value empty to return the first row.",
+    "searchFieldPlaceHolder": "Enter a search term...",
+    "noTableChosenForFiltering": "Choose a table to begin using data source filters.",
+    "filterTabTitle": "Filters",
+    "searchTabTitle": "Search",
+    "noTableChosenForSorting": "Choose a table to begin using data source sorts."
+  },
+  "localBaserowListRowsForm": {
+    "filterTabTitle": "Filters",
+    "sortTabTitle": "Sorts",
+    "searchTabTitle": "Search",
+    "searchFieldPlaceHolder": "Enter a search term...",
+    "noTableChosenForFiltering": "Choose a table to begin using data source filters.",
+    "noTableChosenForSorting": "Choose a table to begin using data source sorts.",
+    "advancedConfig": "Advanced",
+    "defaultResultCount": "Default result count",
+    "defaultResultCountHelp": "The default number of records this data source will fetch on your page. Setting the value to 0, and using it on a collection element, will improve performance on page load by only fetching the records when the element is paginated.",
+    "defaultResultCountPlaceholder": "Default value..."
+  },
+  "localBaserowAggregateRowsForm": {
+    "filterTabTitle": "Filters",
+    "searchTabTitle": "Search",
+    "aggregationFieldLabel": "Field",
+    "aggregationTypeLabel": "Aggregation",
+    "searchFieldPlaceHolder": "Enter a search term...",
+    "noTableChosenForFiltering": "Choose a table to begin using data source filters."
+  },
+  "localBaserowTableServiceConditionalForm": {
+    "addFilter": "Add additional filter",
+    "noFilterTitle": "You have not yet created a data source filter",
+    "noFilterText": "Data source filters allow you to show Baserow table rows that apply to your conditions.",
+    "relatedFieldNotFound": "The related field is not found.",
+    "filterTypeNotFound": "The filter type is not compatible.",
+    "noCompatibleFilterTypesErrorTitle": "No compatible filter types",
+    "noCompatibleFilterTypesErrorMessage": "None of your fields have any compatible filter types",
+    "formulaFilterInputPlaceholder": "Enter text...",
+    "useFormulaForValue": "Use a formula for this filter",
+    "useDefaultForValue": "Use the default filter for this field"
+  },
+  "localBaserowTableServiceSortForm": {
+    "noSortTitle": "You have not yet created a data source sort",
+    "noSortText": "Sorts allow you to sort rows by a field.",
+    "sortBy": "Sort by",
+    "thenBy": "Then by",
+    "addSort": "Add additional sort",
+    "noTableChosenForSorting": "Choose a table to begin using data source sorts.",
+    "sortMisconfigured": "The field this sort is associated with has been trashed."
+  },
+  "dataProviderType": {
+    "dataSource": "Data source",
+    "pageParameter": "Parameter"
+  },
+  "coreHTTPRequestServiceForm": {
+    "httpMethod": "HTTP method",
+    "url": "Endpoint URL",
+    "queryParams": "Query parameters",
+    "name": "Name",
+    "value": "Value",
+    "namePlaceholder": "Name...",
+    "valuePlaceholder": "Value...",
+    "headers": "Headers",
+    "addQueryParam": "add query parameter",
+    "addHeader": "add header",
+    "formData": "Form data",
+    "addFormData": "add form data",
+    "bodyType": "Body type",
+    "bodyContent": "Body content",
+    "urlPlaceholder": "Enter endpoint url...",
+    "bodyPlaceholder": "Add request body...",
+    "timeoutPlaceholder": "Enter timeout...",
+    "nameFieldRequired": "The name property is required.",
+    "seconds": "seconds",
+    "nameFieldInvalid": "The name must contain only alphanumeric characters, dashes, or underscores, and must not start with a dash or an underscore.",
+    "timeout": "Timeout"
+  },
+  "localBaserowTableSelector": {
+    "viewFieldLabel": "View",
+    "tableFieldLabel": "Table",
+    "chooseNoView": "Not selected",
+    "databaseFieldLabel": "Database",
+    "dataSyncedTableDescription": "Data synced table"
+  }
+}

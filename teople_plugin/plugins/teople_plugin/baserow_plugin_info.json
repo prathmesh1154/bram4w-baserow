@@ -1,0 +1,12 @@
+{
+  "name": "My Teople Plugin",
+  "version": "0.0.1",
+  "supported_baserow_versions": ">=1.33.4,<1.34.0",
+  "plugin_api_version": "0.0.1-alpha",
+  "description": "A new Baserow plugin created using the cookiecutter template.",
+  "author": "Your Name",
+  "author_url": "https://yourwebsite.com",
+  "url": "https://github.com/your-org/teople-plugin",
+  "license": "MIT",
+  "contact": "prathmeshlale7888@gmail.com"
+}
